@@ -11,6 +11,41 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    // public function register(Request $request)
+    // {
+    //     try {
+    //         $validator = Validator::make($request->all(), [
+    //             'name' => 'required|max:191',
+    //             'email' => 'required|email|max:191|unique:users,email',
+    //             'password' => 'required|min:7',
+    //         ]);
+
+    //         if ($validator->fails()) {
+    //             return response()->json([
+    //                 'validation_errors' => $validator->messages(),
+    //             ], 422);
+    //         }
+
+    //         $user = User::create([
+    //             'name' => $request->name,
+    //             'email' => $request->email,
+    //             'password' => Hash::make($request->password),
+    //         ]);
+
+    //         $token = $user->createToken($user->email.'_Token')->plainTextToken;
+
+    //         return response()->json([
+    //             'status' => 200,
+    //             'username' => $user->name,
+    //             'token' => $token,
+    //             'message' => 'Registered Successfully',
+    //         ]);
+    //     } catch (\Exception $e) {
+    //         return response()->json([
+    //             'message' => 'Registration failed. Please try again later.',
+    //         ], 500);
+    //     }
+    // }
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -39,7 +74,7 @@ class AuthController extends Controller
         ]);
 
 
-    }
+     }
     // public function login(Request $request)
     // {
     //     if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
